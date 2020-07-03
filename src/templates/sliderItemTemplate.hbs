@@ -1,0 +1,58 @@
+{{#each this}}
+<li class="products-section__slide">
+  <button class="slide__wish-btn"></button>
+  <div class="slide__img-wrap">
+    <img src="https://picsum.photos/280" alt="placeholderImg" width="280" height="280" class="slide__img">
+  </div>
+  <h3 class="slide__title">{{this.title}}</h3>
+  <p class="slide__subtitle">{{this.subtitle}}</p>
+  <ul class="slide__reitind-wrap">
+    <li class="slide__reiting-item"
+      {{#if (firstStar this.rating)}}style="background-image:url('https://i.ibb.co/6ycWV5F/adamantik-Rating-Dark.png')"
+      {{else}}style="background-image:url('https://i.ibb.co/ZNQrb9C/adamantik-Rating.png')" {{/if}}>
+    </li>
+    <li class="slide__reiting-item"
+      {{#if (secondStar this.rating)}}style="background-image:url('https://i.ibb.co/6ycWV5F/adamantik-Rating-Dark.png')"
+      {{else}}style="background-image:url('https://i.ibb.co/ZNQrb9C/adamantik-Rating.png')" {{/if}}>
+    </li>
+    <li class="slide__reiting-item"
+      {{#if (thirdStar this.rating)}}style="background-image:url('https://i.ibb.co/6ycWV5F/adamantik-Rating-Dark.png')"
+      {{else}}style="background-image:url('https://i.ibb.co/ZNQrb9C/adamantik-Rating.png')" {{/if}}>
+    </li>
+    <li class="slide__reiting-item"
+      {{#if (fourthStar this.rating)}}style="background-image:url('https://i.ibb.co/6ycWV5F/adamantik-Rating-Dark.png')"
+      {{else}}style="background-image:url('https://i.ibb.co/ZNQrb9C/adamantik-Rating.png')" {{/if}}>
+    </li>
+    <li class="slide__reiting-item"
+      {{#if (fifthStar this.rating)}}style="background-image:url('https://i.ibb.co/6ycWV5F/adamantik-Rating-Dark.png')"
+      {{else}}style="background-image:url('https://i.ibb.co/ZNQrb9C/adamantik-Rating.png')" {{/if}}>
+    </li>
+  </ul>
+  <form class="slide__form" action="#">
+    <div class="slide__overlay">
+      <select class="form__volume-select" name="volume">
+        {{#each this.volume}}
+        <option value="{{this}}">{{this}} мл</option>
+        {{/each}}
+      </select>
+      <ul class="form__color-list">
+        {{#each this.color}}
+        <li class="form__color-item">
+          <input class="visually-hidden" id="custom_check_{{@index}}" type="radio" name="color" value="{{this}}">
+          <label class="form__color-label" style="background-color:{{this}}" for="custom_check_{{@index}}"></label>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    <p class="form__discount">{{this.discount}}грн.<span class="form__price">{{this.price}}грн.</span></p>
+    <div class="form__btn-wrap">
+      <div class="form__counter">
+        <button type="button" class="form__counter_decrement"></button>
+        <p class="form__count">1</p>
+        <button type="button" class="form__counter_increment"></button>
+      </div>
+      <button class="form__buy-btn"></button>
+    </div>
+  </form>
+</li>
+{{/each}}

@@ -1,0 +1,8 @@
+:root {
+  /* fonts */
+  --main-font: 'Montserrat', sans-serif;
+  --main-font-size: 14px;
+
+  /*colors*/
+  --main-text-color: rgb(51, 51, 51);
+}
